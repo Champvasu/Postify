@@ -9,38 +9,30 @@
 
   <body class="bg-slate-100 text-slate-800 min-h-screen">
 
-    <!-- Navbar -->
     <nav class="bg-blue-600 text-white px-6 py-4 shadow">
       <h1 class="text-2xl font-bold">Postify</h1>
     </nav>
 
-    <!-- Main Container -->
     <main class="max-w-2xl mx-auto mt-10">
 
-      <!-- Page Title -->
       <h2 class="text-2xl font-semibold text-slate-900 mb-6">
         Post Details
       </h2>
 
-      <!-- Post Card -->
       <div class="bg-white p-6 rounded-lg shadow space-y-4">
 
-        <!-- Meta -->
         <p class="text-sm text-slate-500">
           <span class="font-medium">Post ID:</span> <%= post.id %>
         </p>
-
-        <!-- Author -->
+        
         <h4 class="text-lg font-semibold text-slate-900">
           @<%= post.username %>
         </h4>
-
-        <!-- Content -->
+        
         <p class="text-slate-700 leading-relaxed">
           <%= post.content %>
         </p>
 
-        <!-- Actions -->
         <div class="flex gap-3 pt-4">
           <a
             href="/post/<%= post.id %>/edit"
