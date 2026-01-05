@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post in Detail</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+
+  <body class="bg-slate-100 text-slate-800 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white px-6 py-4 shadow">
+      <h1 class="text-2xl font-bold">Postify</h1>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto mt-10">
+
+      <!-- Page Title -->
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+        Post Details
+      </h2>
+
+      <!-- Post Card -->
+      <div class="bg-white p-6 rounded-lg shadow space-y-4">
+
+        <!-- Meta -->
+        <p class="text-sm text-slate-500">
+          <span class="font-medium">Post ID:</span> <%= post.id %>
+        </p>
+
+        <!-- Author -->
+        <h4 class="text-lg font-semibold text-slate-900">
+          @<%= post.username %>
+        </h4>
+
+        <!-- Content -->
+        <p class="text-slate-700 leading-relaxed">
+          <%= post.content %>
+        </p>
+
+        <!-- Actions -->
+        <div class="flex gap-3 pt-4">
+          <a
+            href="/post/<%= post.id %>/edit"
+            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+          >
+            Edit
+          </a>
+
+          <a
+            href="/post"
+            class="px-4 py-2 bg-slate-200 text-slate-800 rounded hover:bg-slate-300 transition"
+          >
+            Back
+          </a>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

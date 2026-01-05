@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postify</title>
+    <link href="/css/index.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-slate-100 text-slate-800 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white px-6 py-4 shadow">
+      <h1 class="text-2xl font-bold">Postify</h1>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto mt-8 space-y-6">
+
+      <% for (let post of posts) { %>
+      <!-- Post Card -->
+      <div class="bg-white rounded-lg shadow p-6">
+
+        <h3 class="text-lg font-semibold text-slate-900">
+          @<%= post.username %>
+        </h3>
+
+        <p class="mt-2 text-slate-700">
+          <%= post.content %>
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-3 mt-4">
+
+          <a
+            href="/post/<%= post.id %>"
+            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >
+            In Detail
+          </a>
+
+          <a
+            href="/post/<%= post.id %>/edit"
+            class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+          >
+            Edit
+          </a>
+
+          <form
+            action="/post/<%= post.id %>/delete?_method=DELETE"
+            method="post"
+          >
+            <button
+              type="submit"
+              class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+            >
+              Delete
+            </button>
+          </form>
+
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Add Post Button -->
+      <div class="text-center mt-10">
+        <a
+          href="/post/new"
+          class="inline-block px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
+        >
+          + Add New Post
+        </a>
+      </div>
+
+    </main>
+  </body>
+</html>
+
+   
+    
+  </body>
+</html>
