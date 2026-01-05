@@ -9,16 +9,16 @@
 
   <body class="bg-slate-100 text-slate-800 min-h-screen">
 
-    <!-- Navbar -->
+    
     <nav class="bg-blue-600 text-white px-6 py-4 shadow">
       <h1 class="text-2xl font-bold">Postify</h1>
     </nav>
 
-    <!-- Main Container -->
+    
     <main class="max-w-3xl mx-auto mt-8 space-y-6">
 
       <% for (let post of posts) { %>
-      <!-- Post Card -->
+      
       <div class="bg-white rounded-lg shadow p-6">
 
         <h3 class="text-lg font-semibold text-slate-900">
@@ -29,7 +29,7 @@
           <%= post.content %>
         </p>
 
-        <!-- Action Buttons -->
+        
         <div class="flex gap-3 mt-4">
 
           <a
@@ -62,7 +62,7 @@
       </div>
       <% } %>
 
-      <!-- Add Post Button -->
+    
       <div class="text-center mt-10">
         <a
           href="/post/new"
